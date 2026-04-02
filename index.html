@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body, html{
+  margin:0;
+  padding:0;
+  font-family:Inter;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* header */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#000a;
+  padding:20px 40px;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  border-bottom:1px solid #111;
+  z-index:100;
+}
+header a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  padding:5px 10px;
+  border:1px solid #333;
+  border-radius:4px;
+  transition:.3s;
+}
+header a:hover{background:#fff;color:#000}
+
+/* центральная надпись */
+h2.center{
+  margin:100px 0 50px 0;
+  font-size:2.5rem;
+  letter-spacing:3px;
+  text-align:center;
+}
+
+/* секция с фотками */
+.section{
+  padding:20px 40px 50px 40px;
+  max-width:1400px;
+  margin:auto;
+  text-align:center;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+.card{
+  background:#0d0d0d;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #111;
+}
+.card img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+/* секция видео/гибки */
+.video-section{
+  position:relative;
+  width:100%;
+  height:500px; /* высота “гибки” */
+  overflow:hidden;
+  margin-top:50px;
+}
+.video-section video{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">Home</a>
+</header>
+
+<h2 class="center">NUMBER NINE</h2>
+
+<section class="section">
+  <div class="grid">
+    <div class="card"><img src="photoA.jpg" alt="Фото A"></div>
+    <div class="card"><img src="photoB.jpg" alt="Фото B"></div>
+    <div class="card"><img src="photoC.jpg" alt="Фото C"></div>
+    <div class="card"><img src="photoD.jpg" alt="Фото D"></div>
+  </div>
+</section>
+
+<!-- гибка / видео на фоне -->
+<section class="video-section">
+  <video src="background.mp4" autoplay muted loop playsinline></video>
+</section>
+
+</body>
+</html>
